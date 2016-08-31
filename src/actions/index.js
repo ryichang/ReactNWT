@@ -10,6 +10,8 @@ export function fetchArticle(article) {
   const url = `${ROOT_URL}&q=${article}`;
   const request = axios.get(url);
 
+  console.log('Request', request);
+
   return {
     type: FETCH_ARTICLE,
     payload: request
