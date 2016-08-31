@@ -23,7 +23,7 @@ export default class SearchBar extends Component {
     return (
       <form onSubmit={this.onFormSubmit} className="input-group">
         <input
-        placeholder="Search for latest news"
+        placeholder="Search for latest articles"
         className="form-control"
         value={this.state.term}
         onChange={this.onInputChange}
