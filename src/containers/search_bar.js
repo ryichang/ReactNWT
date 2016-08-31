@@ -9,14 +9,19 @@ export default class SearchBar extends Component {
     this.onInputChange = this.onInputChange.bind(this);
   }
 
-  onInputChange(event)  {
-    console.log(event.target.value);
+  onInputChange(event) {
     this.setState({ term: event.target.value })
+  }
+
+  onFormSubmit(event) {
+    event.preventDefault();
+
+    //Fetch API
   }
 
   render() {
     return (
-      <form className="input-group">
+      <form onSubmit={this.onFormSubmit} className="input-group">
         <input
         placeholder="Search for latest news"
         className="form-control"
