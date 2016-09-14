@@ -1,31 +1,45 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Article from '../components/article'
 
 class ArticleList extends Component {
   renderArticle(articleData) {
-    return (
-      <tr>
-        <td>{articleData.response.meta.hits}</td>
-      </tr>
-    )
+    let articles = articleData.response.docs.map(doc => {
+      const prefix = "http://static01.nyt.com/";
+      const media = doc.multimedia[2];
+      let url = media ? prefix + media.url : "../img/img-nyt.png"
+      // if (!src || src === undefined){ src= "../img/img-nyt.png"; }
+      // else { const url = prefix + src}
+      // const url = prefix + image;
+      console.log(url);
+
+      return <Article
+        headline={doc.headline.main}
+        snippet={doc.snippet}
+        section={doc.section_name}
+        image={url}
+      />
+
+    })
+
+    return articles
+
+
+    // return (
+    //   // const name = articleData.response.meta.hits;
+    //
+    //
+    //   <tr key={articleData.response.meta.hits}>
+    //     <td>{articleData.response.meta.hits}</td>
+    //   </tr>
+    // )
   }
 
   render() {
     return (
-      <table className="table table-hover">
-        <thead>
-          <tr>
-            <th>Headline print_headline</th>
-            <th>Multimedia url</th>
-            <th>Lead Paragraph</th>
-            <th>Keywords section_name</th>
-            <th>publication date</th>
-          </tr>
-        </thead>
-        <tbody>
-            {this.props.article.map(this.renderArticle)}
-        </tbody>
-      </table>
+      <ul className="col-md-4 list-group">
+        {this.props.article.map(this.renderArticle)}
+      </ul>
     );
   }
 }
