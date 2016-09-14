@@ -1,3 +1,24 @@
+/* General CSS Properties */
+body {
+  /*background: $content-background;*/
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Lora', serif;
+  font-weight: 300;
+  height: 100vh;
+}
+
+a:link,
+a:visited,
+a:focus {
+  color:inherit !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #000 !important;
+  text-decoration: none !important;
+}
 
 /* Form CSS */
 .form-control,
@@ -32,11 +53,11 @@
 .card {
   width: 250px;
   height: 120px;
-  /*padding-right: 5px;*/
   overflow: hidden;
-  /*margin: 5px;*/
   border: 1px solid #E1E6EB;
   overflow: scroll;
+  -webkit-transition: (0.5s);
+  transition: 0.5s;
 }
 
 .card:hover {
@@ -54,15 +75,18 @@
   font-size: 10px;
 }
 .card-img {
-    margin-left: -15px;
-    display: inline;
-    float: left;
-    margin-right: 15px;
-    height: 120px;
-    width: auto;
-    @include brightness(70%);
-    @include transition(0.5s);
+  margin-left: -15px;
+  display: inline;
+  float: left;
+  margin-right: 15px;
+  height: 120px;
+  width: auto;
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+  -webkit-transition: (0.5s);
+  transition: 0.5s;
 }
-.card:hover .card-image {
-    @include brightness(100%);
+.card:hover .card-img {
+  -webkit-filter: brightness(100%) !important;
+  filter: brightness(100%) !important;
 }
