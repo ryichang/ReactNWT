@@ -27,15 +27,16 @@ class SearchBar extends Component {
   render() {
     return (
       <form onSubmit={this.onFormSubmit} className="input-group">
+        <span className="material-icons">search</span>
         <input
-        placeholder="Search for latest articles"
+        placeholder="Search for articles, headlines, etc."
         className="form-control"
         value={this.state.term}
         onChange={this.onInputChange}
         />
-        <span className="input-group-btn">
+        {/* <span className="input-group-btn">
           <button type="submit" className="btn btn-secondary">Submit</button>
-        </span>
+        </span> */}
       </form>
     );
   }

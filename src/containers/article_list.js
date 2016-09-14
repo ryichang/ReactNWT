@@ -17,6 +17,7 @@ class ArticleList extends Component {
         headline={doc.headline.main}
         snippet={doc.snippet}
         section={doc.section_name}
+        web={doc.web_url}
         image={url}
       />
 
@@ -37,9 +38,9 @@ class ArticleList extends Component {
 
   render() {
     return (
-      <ul className="col-md-4 list-group">
+      <div className="col-md-12 list-group">
         {this.props.article.map(this.renderArticle)}
-      </ul>
+      </div>
     );
   }
 }

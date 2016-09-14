@@ -1,0 +1,68 @@
+
+/* Form CSS */
+.form-control,
+.form-control:focus {
+  background: transparent !important;
+  border: none !important;
+  font-size: 16px !important;
+  padding: 35px 25px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0;
+  border-bottom: 1px solid #DDD !important;
+  width: 88.9% !important;
+  margin: 20px !important;
+}
+
+
+::-webkit-input-placeholder {
+  color: #7F8C8D;
+}
+
+.material-icons {
+  font-size: 16px;
+  color: #7F8C8D;
+  position: absolute;
+  top: 50px;
+  left: 15px;
+}
+
+/* Card */
+
+.card {
+  width: 250px;
+  height: 120px;
+  /*padding-right: 5px;*/
+  overflow: hidden;
+  /*margin: 5px;*/
+  border: 1px solid #E1E6EB;
+  overflow: scroll;
+}
+
+.card:hover {
+  border-color: #CED5DB;
+}
+
+
+.card-title {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  padding: 12px 0px 0px 10px;
+}
+
+.card-text {
+  font-size: 10px;
+}
+.card-img {
+    margin-left: -15px;
+    display: inline;
+    float: left;
+    margin-right: 15px;
+    height: 120px;
+    width: auto;
+    @include brightness(70%);
+    @include transition(0.5s);
+}
+.card:hover .card-image {
+    @include brightness(100%);
+}
