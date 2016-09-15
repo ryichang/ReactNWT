@@ -27,7 +27,7 @@ class SearchBar extends Component {
   render() {
     return (
       <form onSubmit={this.onFormSubmit} className="input-group">
-        <span className="material-icons">search</span>
+        <span className="material-icons search">search</span>
         <input
         placeholder="Search for articles, headlines, etc."
         className="form-control"

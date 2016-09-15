@@ -1,6 +1,6 @@
 /* General CSS Properties */
 body {
-  /*background: $content-background;*/
+  background-color: #F2F4F6 !important;
   background-attachment: fixed;
   background-size: cover;
   font-family: 'Lora', serif;
@@ -19,6 +19,90 @@ a:hover {
   color: #000 !important;
   text-decoration: none !important;
 }
+
+hr {
+    border-color: #444;
+}
+
+/* Navbar/sidebar */
+.sidebar {
+    background: #333;
+    height: 100vh;
+    padding-top: 20px;
+    width: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.nyt-logo {
+    width: 50px;
+    height: auto;
+    margin-left: 13px;
+    margin-top: 15px;
+    border: 2px solid #666;
+}
+
+/* Button Tags CSS */
+
+.select,
+.options:hover,
+.top-select,
+.top-select:hover {
+    background: #fff;
+    span {
+        color: #333;
+    }
+}
+
+/*.btn,
+.btn:focus {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: (100%);
+  transition: (0.5s);
+  outline: none;
+  box-shadow: 0px transparent;
+  box-shadow: 2px 3px 4px #BBB;
+  background: #333;
+  span {
+    color: #fff;
+  }
+}*/
+.btn {
+  border-radius: 50% !important;
+  margin-left: 15px !important;
+}
+.options,
+.options:focus {
+    height: 45px;
+    width: 45px !important;
+    border-radius: (100%);
+    background: #252525;
+    border: 1px solid transparent;
+    margin: 6px 2px;
+    transition: (0.5s);
+    cursor: pointer;
+    span {
+        color: #AAA;
+        padding-top: 8px;
+        transition(0.5s);
+        font-size: 15px;
+    }
+}
+/*
+.select,
+.options:hover,
+.top-select,
+.top-select:hover {
+    background: #fff;
+    span {
+        color: #333;
+    }
+}*/
 
 /* Form CSS */
 .form-control,
@@ -44,13 +128,17 @@ a:hover {
   font-size: 16px;
   color: #7F8C8D;
   position: absolute;
-  top: 50px;
-  left: 15px;
+  margin-left: -12px;
 }
 
+.search {
+  top: 52px;
+  left: 25px;
+}
 /* Card */
 
 .card {
+  background: #fff;
   width: 250px;
   height: 120px;
   overflow: hidden;
