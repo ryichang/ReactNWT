@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Article from '../components/article'
+import { fetchTechnology } from '../actions/index';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class ArticleList extends Component {
+  componentWillMount() {
+    console.log('this would be a good time to call an action creator')
+  }
+
   renderArticle(articleData) {
     let articles = articleData.response.docs.map(doc => {
       const prefix = "http://static01.nyt.com/";
@@ -11,7 +17,7 @@ class ArticleList extends Component {
       // if (!src || src === undefined){ src= "../img/img-nyt.png"; }
       // else { const url = prefix + src}
       // const url = prefix + image;
-      console.log(url);
+      // console.log(url);
 
       return <Article
         headline={doc.headline.main}
@@ -37,9 +43,17 @@ class ArticleList extends Component {
   }
 
   render() {
+    const transitionOptions = {
+      transitionName: "fade",
+      transitionEnterTimeout: 0,
+      transitionLeaveTimeout: 0
+    };
+
     return (
       <div className="col-md-12 list-group">
+        <ReactCSSTransitionGroup {...transitionOptions}>
         {this.props.article.map(this.renderArticle)}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }

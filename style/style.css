@@ -141,9 +141,10 @@ hr {
   background: #fff;
   width: 250px;
   height: 120px;
-  overflow: hidden;
+  /*overflow: hidden;*/
+  overflow-x: hidden !important;
   border: 1px solid #E1E6EB;
-  overflow: scroll;
+  overflow-y: scroll;
   -webkit-transition: (0.5s);
   transition: 0.5s;
 }
@@ -177,4 +178,27 @@ hr {
 .card:hover .card-img {
   -webkit-filter: brightness(100%) !important;
   filter: brightness(100%) !important;
+}
+
+/* starting start of animation */
+.fade-enter {
+  bottom: -50px;
+  opacity: 0;
+}
+/* end state of animation */
+.fade-enter-active {
+  bottom: 0px;
+  opacity: 0.1;
+  transition: .3s ease-in all;
+}
+
+.fade-leave {
+  top: 0px;
+  opacity: 0;
+}
+
+.fade-leave-active {
+  top: -50px;
+  opacity: 0.1;
+  tranistion: .3s ease-out all;
 }
