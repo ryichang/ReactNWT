@@ -181,18 +181,18 @@ hr {
 }
 
 /* starting start of animation */
-.fade-enter {
+/*.fade-enter {
   bottom: -50px;
   opacity: 0;
-}
+}*/
 /* end state of animation */
-.fade-enter-active {
+/*.fade-enter-active {
   bottom: 0px;
   opacity: 0.1;
   transition: .3s ease-in all;
-}
+}*/
 
-.fade-leave {
+/*.fade-leave {
   top: 0px;
   opacity: 0;
 }
@@ -201,4 +201,4 @@ hr {
   top: -50px;
   opacity: 0.1;
   tranistion: .3s ease-out all;
-}
+}*/

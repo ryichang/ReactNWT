@@ -32,7 +32,7 @@ class NavBar extends Component {
             <span className="material-icons">timeline</span></Link>
           </hr>
           <hr>
-            <Link to="/Technology" id="tech" data-toggle="tooltip" data-placement="right" title="Techonology" className="btn options" onSubmit={this.onSubmit} value='y'><span className="material-icons">cast</span></Link>
+            <Link to="/Technology" id="tech" data-toggle="tooltip" data-placement="right" title="Techonology" className="btn options"><span className="material-icons">cast</span></Link>
             <Link to="/Business" id="business" data-toggle="tooltip" data-placement="right" title="Business" className="btn options"><span className="material-icons">business</span></Link>
             <Link to="/Politics" id="politics" data-toggle="tooltip" data-placement="right" title="Politics" className="btn options"><span className="material-icons">account_balance</span></Link>
             <Link to="/World" id="world" data-toggle="tooltip" data-placement="right" title="World" className="btn options"><span className="material-icons">public</span></Link>
@@ -44,11 +44,11 @@ class NavBar extends Component {
     );
   }
 }
+
+export default NavBar;
+// 
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators( { fetchTechnology }, dispatch);
+// }
 //
-// export default NavBar;
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators( { fetchTechnology }, dispatch);
-}
-
-export default connect(null, mapDispatchToProps)(NavBar);
+// export default connect(null, mapDispatchToProps)(NavBar);
