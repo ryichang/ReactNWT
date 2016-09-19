@@ -10,7 +10,7 @@ export default function(state = {}, action) {
       // return { ...state, sportsArticle: newArticles}
       return {...state, article: action.payload.data};
     case FETCH_TOPIC:
-      // console.log('received', action.payload.data)
+      console.log('received', action.payload.data)
     // console.log('reudcer received', action.payload.data.response.docs[0]._id);
       return {...state, article: action.payload.data};
       // return {article: action.payload.data, ...state };

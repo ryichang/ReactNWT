@@ -22,10 +22,10 @@ class ArticleList extends Component {
   renderArticle(articleData) {
     const topicName = this.props.topic;
     let articles;
-    if (topicName === "TopStories" && articleData.results !== undefined) {
+    if (topicName === "popular" ) {
       articles = articleData.results.map(result => {
         // const prefix="http://static01.nyt.com/";
-        const media = result.multimedia[1];
+        const media = result.media[0]['media-metadata'][0];
         let url = media ? media.url : "../img/img-nyt.png"
 
         return <Article
@@ -39,24 +39,32 @@ class ArticleList extends Component {
       })
     } else {
 
-
-      articles = articleData.response.docs.map(doc => {
+      console.log('before loop', articleData)
+      articles = articleData.results.map(result => {
+        console.log('result', result)
         const prefix = "http://static01.nyt.com/";
-        const media = doc.multimedia[2];
-        let url = media ? prefix + media.url : "../img/img-nyt.png"
+        const media = result.multimedia[1];
+        let url = media ? media.url : "../img/img-nyt.png"
         // if (!src || src === undefined){ src= "../img/img-nyt.png"; }
         // else { const url = prefix + src}
         // const url = prefix + image;
         // console.log(url);
-
         return <Article
-          key={doc._id}
-          headline={doc.headline.main}
-          snippet={doc.snippet}
-          section={doc.section_name}
-          web={doc.web_url}
-          image={url}
+        key={result.name}
+        headline={result.title}
+        snippet={result.abstract}
+        section={result.section}
+        web={result.url}
+        image={url}
         />
+        // return <Article
+        //   key={doc._id}
+        //   headline={doc.headline.main}
+        //   snippet={doc.snippet}
+        //   section={doc.section_name}
+        //   web={doc.web_url}
+        //   image={url}
+        // />
 
       })
     }
@@ -95,7 +103,7 @@ class ArticleList extends Component {
     }
 
     return (
-      <div className="col-md-12 list-group">
+      <div className="col-md-12 list-group content">
         {/* <ReactCSSTransitionGroup {...transitionOptions}> */}
         {/* {this.props.article.map(this.renderArticle)} */}
         {this.renderArticle(this.props.article)}

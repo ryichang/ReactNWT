@@ -202,3 +202,76 @@ hr {
   opacity: 0.1;
   tranistion: .3s ease-out all;
 }*/
+/* Media Query for Smaller Devices */
+@media(max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .content {
+        padding-top: 50px;
+    }
+    /*.result-tab {
+        position: static;
+    }*/
+    form {
+        .material-icons {
+            top: 65px;
+        }
+    }
+    .form-control,
+    .form-control:focus {
+        padding: 25px 25px;
+        width: 100%;
+    }
+    nav {
+        display: inline;
+    }
+    .navbar {
+        z-index: 99;
+        border: none;
+        .navbar-header {
+            .navbar-brand {
+                .img-logo {
+                    height: 40px;
+                    margin-top: -10px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    .navbar-toggle,
+    .navbar-toggle:focus {
+        @include transition(0.5s);
+        background: none;
+    }
+    .navbar-toggle:hover {
+        background: $primary;
+    }
+    .collapsed {
+        border-width: 1px;
+        border-color: transparent !important;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: $white;
+    }
+    .modal-dialog {
+        padding-top: 100px;
+        width: 94%;
+    }
+    #card-title {
+        font-size: 13px;
+        padding: 12px 0px 0px 10px;
+    }
+    #post-by {
+        font-size: 10px;
+    }
+    .card {
+        height: 100px;
+        padding-right: 5px;
+        overflow: hidden;
+    }
+    #img-card {
+        height: 100px;
+        margin-right: 10px;
+    }
+}
