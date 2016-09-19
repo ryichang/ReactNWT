@@ -29,7 +29,7 @@ class ArticleList extends Component {
         let url = media ? media.url : "../img/img-nyt.png"
 
         return <Article
-        key={result.name}
+        key={result.title}
         headline={result.title}
         snippet={result.abstract}
         section={result.section}
@@ -39,9 +39,7 @@ class ArticleList extends Component {
       })
     } else {
 
-      console.log('before loop', articleData)
       articles = articleData.results.map(result => {
-        console.log('result', result)
         const prefix = "http://static01.nyt.com/";
         const media = result.multimedia[1];
         let url = media ? media.url : "../img/img-nyt.png"
@@ -50,7 +48,7 @@ class ArticleList extends Component {
         // const url = prefix + image;
         // console.log(url);
         return <Article
-        key={result.name}
+        key={result.title}
         headline={result.title}
         snippet={result.abstract}
         section={result.section}
