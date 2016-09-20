@@ -22,7 +22,8 @@ class ArticleList extends Component {
   renderArticle(articleData) {
     const topicName = this.props.topic;
     let articles;
-    if (topicName === "popular" ) {
+    if (topicName === "popular" && articleData.response === undefined) {
+      console.log('first', articleData)
       articles = articleData.results.map(result => {
         // const prefix="http://static01.nyt.com/";
         const media = result.media[0]['media-metadata'][0];
@@ -37,16 +38,30 @@ class ArticleList extends Component {
         image={url}
         />
       })
-    } else {
+    } else if (articleData.response !== undefined) {
+      console.log('second', articleData)
+      articles = articleData.response.docs.map(doc => {
+        const prefix = "http://static01.nyt.com/";
+        const media = doc.multimedia[2];
+        const url = media ? prefix + media.url : "../img/img-nyt.png";
 
+        return <Article
+          key={doc._id}
+          headline={doc.headline.main}
+          snippet={doc.snippet}
+          section={doc.section_name}
+          web={doc.web_url}
+          image={url}
+        />
+
+      })
+    } else {
+      console.log('third', articleData)
       articles = articleData.results.map(result => {
         const prefix = "http://static01.nyt.com/";
         const media = result.multimedia[1];
         let url = media ? media.url : "../img/img-nyt.png"
-        // if (!src || src === undefined){ src= "../img/img-nyt.png"; }
-        // else { const url = prefix + src}
-        // const url = prefix + image;
-        // console.log(url);
+
         return <Article
         key={result.title}
         headline={result.title}
@@ -55,6 +70,12 @@ class ArticleList extends Component {
         web={result.url}
         image={url}
         />
+
+        // if (!src || src === undefined){ src= "../img/img-nyt.png"; }
+        // else { const url = prefix + src}
+        // const url = prefix + image;
+        // console.log(url);
+
         // return <Article
         //   key={doc._id}
         //   headline={doc.headline.main}
@@ -90,7 +111,7 @@ class ArticleList extends Component {
       transitionLeaveTimeout: 0
     };
 
-    console.log(" this.props.topic;",  this.props.topic)
+    console.log(" this.props.topic",  this.props.topic)
 
     if (_.isEmpty(this.props.article)){
       return (
@@ -102,10 +123,10 @@ class ArticleList extends Component {
 
     return (
       <div className="col-md-12 list-group content">
-        {/* <ReactCSSTransitionGroup {...transitionOptions}> */}
+         {/* <ReactCSSTransitionGroup {...transitionOptions}> */}
         {/* {this.props.article.map(this.renderArticle)} */}
         {this.renderArticle(this.props.article)}
-        {/* </ReactCSSTransitionGroup> */}
+         {/* </ReactCSSTransitionGroup>  */}
       </div>
     );
   }

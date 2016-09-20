@@ -16,7 +16,7 @@ export function fetchArticle(article) {
   const url = `${ROOT_URL}&q=${article}`;
   const request = axios.get(url);
 
-  console.log('Request', request);
+  // console.log('SEARCH IS', request);
 
   return {
     type: FETCH_ARTICLE,
@@ -31,7 +31,6 @@ export function fetchTopic(topic) {
   } else if (topic === "popular") {
     url = `${POPULAR_URL}${POPULAR_KEY}`;
   } else {
-    // url = `https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=6c28641ec7424a5fa0ca019acd34ba24`;
     url = `${TOPIC_URL}${topic}.json?api-key=${API_KEY}`;
   }
 

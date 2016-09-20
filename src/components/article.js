@@ -4,7 +4,7 @@ export default (props) => {
   // console.log('this is the props', props)
   return (
         <div className="col-md-4">
-          <div className="col-md-12 card" key={props.key}>
+          <div className="col-md-12 card">
             <a href={props.web} target="_blank">
             <img className="card-img" src={props.image}></img>
             <p className="card-headline">{props.headline}</p>

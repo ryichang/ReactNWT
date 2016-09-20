@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 
 import SearchBar from '../containers/search_bar';
 import ArticleList from '../containers/article_list';
-import NavBar from '../containers/navbar';
+import SideBar from '../containers/sidebar';
 
 
 export default class App extends Component {
@@ -17,7 +17,7 @@ export default class App extends Component {
 
     return (
       <div className="col-md-12">
-        <NavBar />
+        <SideBar />
         <SearchBar />
         <ArticleList topic={topicName} />
       </div>

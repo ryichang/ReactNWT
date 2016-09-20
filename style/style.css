@@ -3,7 +3,7 @@ body {
   background-color: #F2F4F6 !important;
   background-attachment: fixed;
   background-size: cover;
-  font-family: 'Lora', serif;
+  /*font-family: 'Lora', serif;*/
   font-weight: 300;
   height: 100vh;
 }
@@ -43,6 +43,14 @@ hr {
     border: 2px solid #666;
 }
 
+.nav-logo {
+    width: 50px;
+    height: auto;
+    margin-left: -10px;
+    margin-top: -12px;
+    border: 2px solid #666;
+}
+
 /* Button Tags CSS */
 
 .select,
@@ -72,7 +80,10 @@ hr {
     color: #fff;
   }
 }*/
+
+
 .btn {
+  margin: 5px !important;
   border-radius: 50% !important;
   margin-left: 15px !important;
 }
@@ -125,16 +136,19 @@ hr {
 }
 
 .material-icons {
-  font-size: 16px;
+  font-size: 16px !important;
   color: #7F8C8D;
   position: absolute;
-  margin-left: -12px;
+  margin-top: 6px;
+  margin-left: -8px;
 }
 
 .search {
-  top: 52px;
+  top: 42px;
   left: 25px;
 }
+
+
 /* Card */
 
 .card {
@@ -180,6 +194,28 @@ hr {
   filter: brightness(100%) !important;
 }
 
+hr {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.navbar {
+  margin-bottom: -20px !important;
+}
+
+.navbar-inverse {
+    background-color: #333 !important;
+    border-color: #080808;
+}
+.navbar .navbar-nav>li>a {
+    color: #fff !important;
+}
+
+.navbar-collapse {
+  border-top: none !important;
+}
 /* starting start of animation */
 /*.fade-enter {
   bottom: -50px;
@@ -190,9 +226,9 @@ hr {
   bottom: 0px;
   opacity: 0.1;
   transition: .3s ease-in all;
-}*/
+}
 
-/*.fade-leave {
+.fade-leave {
   top: 0px;
   opacity: 0;
 }
@@ -202,76 +238,40 @@ hr {
   opacity: 0.1;
   tranistion: .3s ease-out all;
 }*/
+
 /* Media Query for Smaller Devices */
-@media(max-width: 768px) {
-    .sidebar {
-        display: none;
-    }
-    .content {
-        padding-top: 50px;
-    }
-    /*.result-tab {
-        position: static;
-    }*/
-    form {
-        .material-icons {
-            top: 65px;
-        }
-    }
-    .form-control,
-    .form-control:focus {
-        padding: 25px 25px;
-        width: 100%;
-    }
-    nav {
-        display: inline;
-    }
-    .navbar {
-        z-index: 99;
-        border: none;
-        .navbar-header {
-            .navbar-brand {
-                .img-logo {
-                    height: 40px;
-                    margin-top: -10px;
-                    margin-left: 10px;
-                }
-            }
-        }
-    }
-    .navbar-toggle,
-    .navbar-toggle:focus {
-        @include transition(0.5s);
-        background: none;
-    }
-    .navbar-toggle:hover {
-        background: $primary;
-    }
-    .collapsed {
-        border-width: 1px;
-        border-color: transparent !important;
-    }
-    .navbar-default .navbar-toggle .icon-bar {
-        background-color: $white;
-    }
-    .modal-dialog {
-        padding-top: 100px;
-        width: 94%;
-    }
-    #card-title {
-        font-size: 13px;
-        padding: 12px 0px 0px 10px;
-    }
-    #post-by {
-        font-size: 10px;
-    }
-    .card {
-        height: 100px;
-        padding-right: 5px;
-        overflow: hidden;
-    }
-    #img-card {
-        height: 100px;
-        margin-right: 10px;
-    }
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+    .navbar { display: none;}
+}
+@media only screen and (max-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .sidebar { display: none;}
 }
