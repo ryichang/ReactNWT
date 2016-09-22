@@ -6,6 +6,7 @@ body {
   /*font-family: 'Lora', serif;*/
   font-weight: 300;
   height: 100vh;
+  padding: 35px;
 }
 
 a:link,
@@ -26,29 +27,29 @@ hr {
 
 /* Navbar/sidebar */
 .sidebar {
-    background: #333;
-    height: 100vh;
-    padding-top: 20px;
-    width: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
+  background: #333;
+  height: 100vh;
+  padding-top: 20px;
+  width: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .nyt-logo {
-    width: 50px;
-    height: auto;
-    margin-left: 13px;
-    margin-top: 15px;
-    border: 2px solid #666;
+  width: 50px;
+  height: auto;
+  margin-left: 13px;
+  margin-top: 15px;
+  border: 2px solid #666;
 }
 
 .nav-logo {
-    width: 50px;
-    height: auto;
-    margin-left: -10px;
-    margin-top: -12px;
-    border: 2px solid #666;
+  width: 50px;
+  height: auto;
+  margin-left: -10px;
+  margin-top: -12px;
+  border: 2px solid #666;
 }
 
 /* Button Tags CSS */
@@ -155,10 +156,10 @@ hr {
   background: #fff;
   width: 250px;
   height: 120px;
-  /*overflow: hidden;*/
+  overflow: hidden;
   overflow-x: hidden !important;
   border: 1px solid #E1E6EB;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
   -webkit-transition: (0.5s);
   transition: 0.5s;
 }
@@ -167,15 +168,22 @@ hr {
   border-color: #CED5DB;
 }
 
-
+/*
 .card-title {
   font-family: 'Lora', serif;
   font-size: 18px;
   padding: 12px 0px 0px 10px;
+}*/
+
+.card-headline {
+  /*font-family: 'Lora', serif;*/
+  font-size: 14px;
+  font-weight: 800;
+  padding: 12px 0px 0px 10px;
 }
 
 .card-text {
-  font-size: 10px;
+  font-size: 12px;
 }
 .card-img {
   margin-left: -15px;
@@ -202,10 +210,16 @@ hr {
 }
 
 .navbar {
-  margin-bottom: -20px !important;
+  border: none;
+  /*margin-bottom: -20px !important;*/
+}
+
+.navbar-fixed-top {
+  z-index: none !important;
 }
 
 .navbar-inverse {
+    position: inline;
     background-color: #333 !important;
     border-color: #080808;
 }
@@ -215,6 +229,7 @@ hr {
 
 .navbar-collapse {
   border-top: none !important;
+  max-height: none !important;
 }
 /* starting start of animation */
 /*.fade-enter {
@@ -274,4 +289,10 @@ hr {
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
     .sidebar { display: none;}
+    .card-headline {
+      font-size: 9px;
+    }
+    .card-text {
+      font-size: 9px;
+    }
 }

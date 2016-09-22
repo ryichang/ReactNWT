@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchTechnology } from '../actions/index';
 import { Link } from 'react-router';
-import { Nav, Navbar, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
+import { Nav, Navbar, NavItem, NavDropdown, MenuItem, Tooltip, OverlayTrigger} from 'react-bootstrap';
 
 
 
@@ -24,10 +24,42 @@ class SideBar extends Component {
     this.setState( { term: '' });
   }
 
+
   render() {
+    const tooltipNWT = (
+    <Tooltip id="tooltip"><strong>New York Times</strong></Tooltip>
+    );
+    const tooltipPopular = (
+    <Tooltip id="tooltip"><strong>Popular</strong></Tooltip>
+    );
+    const tooltipTopStories = (
+    <Tooltip id="tooltip"><strong>Top Stories</strong></Tooltip>
+    );
+    const tooltipTechnology = (
+    <Tooltip id="tooltip"><strong>Technology</strong></Tooltip>
+    );
+    const tooltipBusiness = (
+    <Tooltip id="tooltip"><strong>Business</strong></Tooltip>
+    );
+    const tooltipPolitics = (
+    <Tooltip id="tooltip"><strong>Politics</strong></Tooltip>
+    );
+    const tooltipWorld = (
+    <Tooltip id="tooltip"><strong>World</strong></Tooltip>
+    );
+    const tooltipSports = (
+    <Tooltip id="tooltip"><strong>Sports</strong></Tooltip>
+    );
+    const tooltipFashion = (
+    <Tooltip id="tooltip"><strong>Fashion</strong></Tooltip>
+    );
+    const tooltipTravel = (
+    <Tooltip id="tooltip"><strong>Travel</strong></Tooltip>
+    );
+
     return (
       <div>
-        <Navbar inverse>
+        <Navbar fixedTop inverse>
           <Navbar.Header>
             <Navbar.Brand>
               <a href="http://www.nytimes.com/" target="_blank"><img src={"../img/img-nyt.png"} className="img-responsive nav-logo img-circle"></img></a>
@@ -53,19 +85,20 @@ class SideBar extends Component {
       <div className="sidebar">
         <a href="http://www.nytimes.com/" target="_blank"><img src={"../img/img-nyt.png"} className="img-responsive nyt-logo img-circle"></img></a>
           <hr />
-            <Link to="/popular" id="hot" data-toggle="tooltip" data-placement="right" title="Popular" className="btn options top-select">
-            <span className="material-icons">whatshot</span></ Link>
-            <Link to="/TopStories" id="top" data-toggle="tooltip" data-placement="right" title="TopStories" className="btn options">
-            <span className="material-icons">timeline</span></Link>
+            <OverlayTrigger placement="right" overlay={tooltipPopular}><Link to="/popular" id="hot" title="Popular" className="btn options top-select">
+            <span className="material-icons">whatshot</span>
+            </ Link></OverlayTrigger>
+            <OverlayTrigger placement="right" overlay={tooltipTopStories}><Link to="/TopStories" id="top" title="TopStories" className="btn options">
+            <span className="material-icons">timeline</span></Link></OverlayTrigger>
 
           <hr />
-            <Link to="/technology" id="tech" data-toggle="tooltip" data-placement="right" title="Techonology" className="btn options"><span className="material-icons">cast</span></Link>
-            <Link to="/business" id="business" data-toggle="tooltip" data-placement="right" title="Business" className="btn options"><span className="material-icons">business</span></Link>
-            <Link to="/politics" id="politics" data-toggle="tooltip" data-placement="right" title="Politics" className="btn options"><span className="material-icons">account_balance</span></Link>
-            <Link to="/world" id="world" data-toggle="tooltip" data-placement="right" title="World" className="btn options"><span className="material-icons">public</span></Link>
-            <Link to="/sports" id="sports" data-toggle="tooltip" data-placement="right" title="Sports" className="btn options"><span className="material-icons">directions_bike</span></Link>
-            <Link to="/fashion" id="fashion" data-toggle="tooltip" data-placement="right" title="Fashion" className="btn options"><span className="material-icons">filter_vintage</span></Link>
-            <Link to="/travel" id="travel" data-toggle="tooltip" data-placement="right" title="Travel" className="btn options"><span className="material-icons">directions_car</span></Link>
+            <OverlayTrigger placement="right" overlay={tooltipTechnology}><Link to="/technology" id="tech" title="Techonology" className="btn options"><span className="material-icons">cast</span></Link></OverlayTrigger>
+            <OverlayTrigger placement="right" overlay={tooltipBusiness}><Link to="/business" id="business" title="Business" className="btn options"><span className="material-icons">business</span></Link></OverlayTrigger>
+            <OverlayTrigger placement="right" overlay={tooltipPolitics}><Link to="/politics" id="politics" title="Politics" className="btn options"><span className="material-icons">account_balance</span></Link></OverlayTrigger>
+            <OverlayTrigger placement="right" overlay={tooltipWorld}><Link to="/world" id="world" title="World" className="btn options"><span className="material-icons">public</span></Link></OverlayTrigger>
+            <OverlayTrigger placement="right" overlay={tooltipSports}><Link to="/sports" id="sports" title="Sports" className="btn options"><span className="material-icons">directions_bike</span></Link></OverlayTrigger>
+            <OverlayTrigger placement="right" overlay={tooltipFashion}><Link to="/fashion" id="fashion" title="Fashion" className="btn options"><span className="material-icons">filter_vintage</span></Link></OverlayTrigger>
+            <OverlayTrigger placement="right" overlay={tooltipTravel}><Link to="/travel" id="travel" title="Travel" className="btn options"><span className="material-icons">directions_car</span></Link></OverlayTrigger>
       </div>
       </div>
     );

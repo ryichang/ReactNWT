@@ -9,7 +9,7 @@ export default (props) => {
             <img className="card-img" src={props.image}></img>
             <p className="card-headline">{props.headline}</p>
             <p className="card-text">{props.section}</p>
-            <p className="card-text">{props.snippet}</p>
+            {/* <p className="card-text">{props.snippet}</p> */}
             </a>
           </div>
         </div>
