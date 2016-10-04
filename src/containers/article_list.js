@@ -1,3 +1,9 @@
+
+
+
+
+
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Article from '../components/article'
@@ -26,8 +32,22 @@ class ArticleList extends Component {
       console.log('first', articleData)
       articles = articleData.results.map(result => {
         // const prefix="http://static01.nyt.com/";
-        const media = result.media[0]['media-metadata'][0];
-        let url = media ? media.url : "../img/img-nyt.png"
+        let url;
+        const mediaArray = result.media[0]
+        if (mediaArray && mediaArray['media-metadata'][0]) {
+          const media = mediaArray['media-metadata'][0];
+          url = media.url;
+        } else {
+          url = "../img/img-nyt.png"
+        }
+        // console.log('media is', media[0]['media-metadata'][0])
+        // console.log('media', result.media[0])
+        // if (media === 'undefined') {
+        //   let url = "../img/img-nyt.png"
+        // } else {
+        //   let url = media
+        // }
+        // let url = media ? media.url : "../img/img-nyt.png"
 
         return <Article
         key={result.title}

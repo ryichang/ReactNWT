@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { fetchTechnology } from '../actions/index';
 import { Link } from 'react-router';
 import { Nav, Navbar, NavItem, NavDropdown, MenuItem, Tooltip, OverlayTrigger} from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 
 
@@ -68,16 +69,15 @@ class SideBar extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem><Link to="/popular">Popular</Link></NavItem>
-              <NavItem><Link to="/TopStories">Top Stories</Link></NavItem>
-              <NavItem><Link to="/technology">Technology</Link></NavItem>
-              <NavItem><Link to="/business">Business</Link></NavItem>
-              <NavItem><Link to="/politics">Politics</Link></NavItem>
-              <NavItem><Link to="/world">World</Link></NavItem>
-              <NavItem><Link to="/sports">Sports</Link></NavItem>
-              <NavItem><Link to="/fashion">Fashion</Link></NavItem>
-              <NavItem><Link to="/travel">Travel</Link></NavItem>
-
+              <LinkContainer to="/popular"><NavItem>Popular</NavItem></LinkContainer>
+              <LinkContainer to="/TopStories"><NavItem>Top Stories</NavItem></LinkContainer>
+              <LinkContainer to="/technology"><NavItem>Technology</NavItem></LinkContainer>
+              <LinkContainer to="/business"><NavItem>Business</NavItem></LinkContainer>
+              <LinkContainer to="/politics"><NavItem>Politics</NavItem></LinkContainer>
+              <LinkContainer to="/world"><NavItem>World</NavItem></LinkContainer>
+              <LinkContainer to="/sports"><NavItem>Sports</NavItem></LinkContainer>
+              <LinkContainer to="/fashion"><NavItem>Fashion</NavItem></LinkContainer>
+              <LinkContainer to="/travel"><NavItem>Travel</NavItem></LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
