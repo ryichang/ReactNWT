@@ -5,7 +5,7 @@ const API_KEY = '6c28641ec7424a5fa0ca019acd34ba24';
 const ROOT_URL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?appid=${API_KEY}`;
 const TOPIC_URL = `https://api.nytimes.com/svc/topstories/v2/`;
 const POPULAR_KEY = 'e4cbd64f281e46f882876736e874cff6';
-const POPULAR_URL = `http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?api-key=`
+const POPULAR_URL = `https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?api-key=`
 
 
 export const FETCH_ARTICLE = 'FETCH_ARTICLE';
