@@ -27,7 +27,7 @@ export function fetchArticle(article) {
 export function fetchTopic(topic) {
   let url;
   if (topic === "TopStories") {
-    url = 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=e4cbd64f281e46f882876736e874cff6'
+    url = 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=6c28641ec7424a5fa0ca019acd34ba24'
   } else if (topic === "popular") {
     url = `${POPULAR_URL}${POPULAR_KEY}`;
   } else {
