@@ -162,6 +162,7 @@ hr {
   overflow: hidden;
   overflow-x: hidden !important;
   border: 1px solid #E1E6EB;
+  margin: 10px;
   /*overflow-y: scroll;*/
   -webkit-transition: (0.5s);
   transition: 0.5s;
